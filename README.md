@@ -16,3 +16,6 @@ Struktura danych
    * cube = kubatura pomieszczenia w m^3
    * heating = poziom zużycia energii ogrzewania (float)
    * light – łączna moc oświetlenia
+
+Product Backlog oraz Sprint Backlog:
+<a href="https://docs.google.com/spreadsheets/d/1ySsXC-K4nm57-Rw9HnSQgmPofAk3d2ofKPhk7Z_1uO4/edit?usp=sharing" target="_blank">BuildingInfo</a>

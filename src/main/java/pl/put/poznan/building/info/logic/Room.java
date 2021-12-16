@@ -1,6 +1,6 @@
 package pl.put.poznan.building.info.logic;
 
-public class Room extends Location{
+public class Room extends Location {
     private double area;
     private double cube;
     private double heating;

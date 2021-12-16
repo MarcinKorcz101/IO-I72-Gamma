@@ -1,6 +1,6 @@
 package pl.put.poznan.building.info.logic;
 
-public class Location {
+public class Location implements LocationInterface{
     private Integer id;
     private String name;
 
@@ -24,6 +24,4 @@ public class Location {
     public void setName(String name) {
         this.name = name;
     }
-
-
 }

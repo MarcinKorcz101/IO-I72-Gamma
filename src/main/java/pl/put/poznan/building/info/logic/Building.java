@@ -1,12 +1,14 @@
 package pl.put.poznan.building.info.logic;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Building extends Location{
+public class Building extends Location {
     private List<Level> levels;
 
     public Building(Integer id, String name) {
         super(id, name);
+        this.levels = new ArrayList<Level>();
     }
 
     public List<Level> getLevels() {
@@ -20,4 +22,5 @@ public class Building extends Location{
     private void addLevel(Level level){
         levels.add(level);
     }
+
 }

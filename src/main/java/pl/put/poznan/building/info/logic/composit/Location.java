@@ -1,6 +1,9 @@
-package pl.put.poznan.building.info.logic;
+package pl.put.poznan.building.info.logic.composit;
 
-public class Location implements LocationInterface{
+import pl.put.poznan.building.info.logic.composit.LocationInterface;
+import pl.put.poznan.building.info.logic.visitor.Visitor;
+
+public class Location implements LocationInterface {
     private Integer id;
     private String name;
 
@@ -23,5 +26,10 @@ public class Location implements LocationInterface{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public double accept(Visitor visitor) {
+        return 0;
     }
 }

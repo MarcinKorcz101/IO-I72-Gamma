@@ -1,4 +1,7 @@
-package pl.put.poznan.building.info.logic;
+package pl.put.poznan.building.info.logic.composit;
+
+import pl.put.poznan.building.info.logic.composit.Location;
+import pl.put.poznan.building.info.logic.visitor.Visitor;
 
 public class Room extends Location {
     private double area;
@@ -40,5 +43,10 @@ public class Room extends Location {
 
     public void setLight(double light) {
         this.light = light;
+    }
+
+    @Override
+    public double accept(Visitor visitor) {
+        return visitor.visitRoom(this);
     }
 }

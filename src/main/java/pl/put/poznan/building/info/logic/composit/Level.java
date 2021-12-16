@@ -1,4 +1,6 @@
-package pl.put.poznan.building.info.logic;
+package pl.put.poznan.building.info.logic.composit;
+
+import pl.put.poznan.building.info.logic.visitor.Visitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,5 +23,10 @@ public class Level extends Location {
 
     private void addRoom(Room room){
         rooms.add(room);
+    }
+
+    @Override
+    public double accept(Visitor visitor) {
+        return visitor.visitLevel(this);
     }
 }

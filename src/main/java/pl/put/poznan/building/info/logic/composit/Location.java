@@ -1,9 +1,8 @@
 package pl.put.poznan.building.info.logic.composit;
 
-import pl.put.poznan.building.info.logic.composit.LocationInterface;
 import pl.put.poznan.building.info.logic.visitor.Visitor;
 
-public class Location implements LocationInterface {
+public abstract class Location {
     private Integer id;
     private String name;
 
@@ -28,8 +27,5 @@ public class Location implements LocationInterface {
         this.name = name;
     }
 
-    @Override
-    public double accept(Visitor visitor) {
-        return 0;
-    }
+    abstract void accept(Visitor visitor);
 }

@@ -5,18 +5,23 @@ import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
 public class GetLightVisitor implements Visitor{
+    private double light;
+
+    public double getLight(){
+        return light;
+    }
     @Override
-    public double visitBuilding(Building building) {
-        return 0;
+    public void visitBuilding(Building building) {
+        light = 0;
     }
 
     @Override
-    public double visitLevel(Level level) {
-        return 0;
+    public void visitLevel(Level level) {
+        light = 0;
     }
 
     @Override
-    public double visitRoom(Room room) {
-        return 0;
+    public void visitRoom(Room room) {
+        light = 0;
     }
 }

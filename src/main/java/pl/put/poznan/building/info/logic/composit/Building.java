@@ -28,8 +28,8 @@ public class Building extends Location {
     }
 
     @Override
-    public double accept(Visitor visitor) {
-        return visitor.visitBuilding(this);
+    public void accept(Visitor visitor) {
+        visitor.visitBuilding(this);
     }
 
 }

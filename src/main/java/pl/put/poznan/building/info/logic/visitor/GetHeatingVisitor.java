@@ -5,19 +5,23 @@ import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
 public class GetHeatingVisitor implements Visitor {
+    private double heating;
 
+    public double getHeating(){
+        return heating;
+    }
     @Override
-    public double visitBuilding(Building building) {
-        return 0;
+    public void visitBuilding(Building building) {
+        heating = 0;
     }
 
     @Override
-    public double visitLevel(Level level) {
-        return 0;
+    public void visitLevel(Level level) {
+        heating = 0;
     }
 
     @Override
-    public double visitRoom(Room room) {
-        return 0;
+    public void visitRoom(Room room) {
+        heating = 0;
     }
 }

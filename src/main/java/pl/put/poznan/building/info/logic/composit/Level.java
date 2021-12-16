@@ -26,7 +26,7 @@ public class Level extends Location {
     }
 
     @Override
-    public double accept(Visitor visitor) {
-        return visitor.visitLevel(this);
+    public void accept(Visitor visitor) {
+        visitor.visitLevel(this);
     }
 }

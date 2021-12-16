@@ -12,20 +12,17 @@ public class GetAreaVisitor implements Visitor{
     }
 
     @Override
-    public double visitBuilding(Building building) {
+    public void visitBuilding(Building building) {
         area = 0;
-        return 0;
     }
 
     @Override
-    public double visitLevel(Level level) {
+    public void visitLevel(Level level) {
         area = 0;
-        return 0;
     }
 
     @Override
-    public double visitRoom(Room room) {
+    public void visitRoom(Room room) {
         area = room.getArea();
-        return 0;
     }
 }

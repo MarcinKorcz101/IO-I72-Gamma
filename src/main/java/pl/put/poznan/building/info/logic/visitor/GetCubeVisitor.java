@@ -5,18 +5,24 @@ import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
 public class GetCubeVisitor implements Visitor{
-    @Override
-    public double visitBuilding(Building building) {
-        return 0;
+    private double cube;
+
+    public double getCube(){
+        return cube;
     }
 
     @Override
-    public double visitLevel(Level level) {
-        return 0;
+    public void visitBuilding(Building building) {
+        cube = 0;
     }
 
     @Override
-    public double visitRoom(Room room) {
-        return 0;
+    public void visitLevel(Level level) {
+        cube = 0;
+    }
+
+    @Override
+    public void visitRoom(Room room) {
+        cube = 0;
     }
 }

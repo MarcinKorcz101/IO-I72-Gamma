@@ -5,7 +5,7 @@ import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
 public interface Visitor {
-    double visitBuilding(Building building);
-    double visitLevel(Level level);
-    double visitRoom(Room room);
+    void visitBuilding(Building building);
+    void visitLevel(Level level);
+    void visitRoom(Room room);
 }

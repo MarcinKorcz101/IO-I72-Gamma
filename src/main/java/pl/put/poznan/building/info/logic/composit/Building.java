@@ -23,7 +23,7 @@ public class Building extends Location {
         this.levels = levels;
     }
 
-    private void addLevel(Level level){
+    public void addLevel(Level level){
         levels.add(level);
     }
 

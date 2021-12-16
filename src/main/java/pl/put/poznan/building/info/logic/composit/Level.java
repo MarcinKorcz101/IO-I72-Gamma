@@ -21,7 +21,7 @@ public class Level extends Location {
         this.rooms = rooms;
     }
 
-    private void addRoom(Room room){
+    public void addRoom(Room room){
         rooms.add(room);
     }
 

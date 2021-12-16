@@ -1,43 +1,53 @@
 package pl.put.poznan.building.info.rest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pl.put.poznan.building.info.logic.BuildingInfo;
+import pl.put.poznan.building.info.data.BuildingData;
+import pl.put.poznan.building.info.logic.composit.Building;
+import pl.put.poznan.building.info.logic.composit.Level;
+import pl.put.poznan.building.info.logic.visitor.GetAreaVisitor;
+import pl.put.poznan.building.info.service.BuildingService;
 
-import java.util.Arrays;
+import java.util.List;
 
 
 @RestController
-@RequestMapping("/{text}")
 public class BuildingInfoController {
 
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
+    private BuildingService service;
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public String get(@PathVariable String text,
-                              @RequestParam(value="transforms", defaultValue="upper,escape") String[] transforms) {
-
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
-
-        // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo transformer = new BuildingInfo(transforms);
-        return transformer.transform(text);
+    @Autowired
+    public BuildingInfoController(BuildingService service) {
+        this.service = service;
+        Building building = BuildingData.get();
+        service.setBuilding(building);
+        logger.debug("Create data");
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public String post(@PathVariable String text,
-                      @RequestBody String[] transforms) {
 
-        // log the parameters
-        logger.debug(text);
-        logger.debug(Arrays.toString(transforms));
-
-        // perform the transformation, you should run your logic here, below is just a silly example
-        BuildingInfo transformer = new BuildingInfo(transforms);
-        return transformer.transform(text);
+    @GetMapping("/building/name")
+    public String getBuildingName() {
+        logger.debug("Getting building name");
+        return service.getBuilding().getName();
     }
+
+    @GetMapping("/building/levels")
+    public List<Level> getBuildingLevels() {
+        logger.debug("Getting levels");
+        return service.getBuilding().getLevels();
+    }
+
+    @GetMapping("/area/{id}")
+    public String getArea(@PathVariable int id) {
+        logger.debug("Getting area of location " + id);
+
+        GetAreaVisitor getAreaVisitor = new GetAreaVisitor();
+        service.getBuilding().getLevels().get(0).getRooms().get(id).accept(getAreaVisitor);
+        return "Area " + getAreaVisitor.getArea();
+    }
+
 }
 
 

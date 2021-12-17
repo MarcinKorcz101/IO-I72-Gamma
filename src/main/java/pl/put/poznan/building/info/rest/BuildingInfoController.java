@@ -42,6 +42,24 @@ public class BuildingInfoController {
         return "Area " + getAreaVisitor.getArea();
     }
 
+    @GetMapping("/cube/{id}")
+    public String getCube(@PathVariable int id) {
+        logger.debug("Getting cube of location " + id);
+        return "Cube ";
+    }
+
+    @GetMapping("/heating/{id}")
+    public String getHeating(@PathVariable int id) {
+        logger.debug("Getting heating of location " + id);
+        return "Heating ";
+    }
+
+    @GetMapping("/light/{id}")
+    public String getLight(@PathVariable int id) {
+        logger.debug("Getting light of location " + id);
+        return "Light ";
+    }
+
 
 }
 

@@ -10,6 +10,7 @@ import pl.put.poznan.building.info.logic.visitor.GetAreaVisitor;
 import pl.put.poznan.building.info.service.BuildingService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -27,26 +28,20 @@ public class BuildingInfoController {
     }
 
 
-    @GetMapping("/building/name")
-    public String getBuildingName() {
+    @GetMapping("/")
+    public Building getBuildingName() {
         logger.debug("Getting building name");
-        return service.getBuilding().getName();
-    }
-
-    @GetMapping("/building/levels")
-    public List<Level> getBuildingLevels() {
-        logger.debug("Getting levels");
-        return service.getBuilding().getLevels();
+        return service.getBuilding();
     }
 
     @GetMapping("/area/{id}")
     public String getArea(@PathVariable int id) {
         logger.debug("Getting area of location " + id);
-
-        GetAreaVisitor getAreaVisitor = new GetAreaVisitor();
-        service.getBuilding().getLevels().get(0).getRooms().get(id).accept(getAreaVisitor);
+        GetAreaVisitor getAreaVisitor = new GetAreaVisitor(id);
+        service.getBuilding().accept(getAreaVisitor);
         return "Area " + getAreaVisitor.getArea();
     }
+
 
 }
 

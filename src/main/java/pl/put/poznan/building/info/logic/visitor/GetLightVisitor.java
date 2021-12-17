@@ -16,12 +16,12 @@ public class GetLightVisitor implements Visitor{
     }
 
     @Override
-    public void visitLevel(Level level) {
+    public void visitLevel(Level level, boolean isSearchedLevel) {
         light = 0;
     }
 
     @Override
-    public void visitRoom(Room room) {
+    public void visitRoom(Room room, boolean isSearchedRoom) {
         light = 0;
     }
 }

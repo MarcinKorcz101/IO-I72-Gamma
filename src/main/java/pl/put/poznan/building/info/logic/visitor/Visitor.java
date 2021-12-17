@@ -6,6 +6,6 @@ import pl.put.poznan.building.info.logic.composit.Room;
 
 public interface Visitor {
     void visitBuilding(Building building);
-    void visitLevel(Level level);
-    void visitRoom(Room room);
+    void visitLevel(Level level, boolean isSearchedLevel);
+    void visitRoom(Room room, boolean isSearchedRoom);
 }

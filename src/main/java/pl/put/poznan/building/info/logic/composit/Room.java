@@ -47,6 +47,6 @@ public class Room extends Location {
 
     @Override
     public void accept(Visitor visitor) {
-        visitor.visitRoom(this);
+        visitor.visitRoom(this, false);
     }
 }

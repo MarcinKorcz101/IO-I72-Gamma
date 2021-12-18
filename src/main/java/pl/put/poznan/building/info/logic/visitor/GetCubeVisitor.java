@@ -6,6 +6,12 @@ import pl.put.poznan.building.info.logic.composit.Room;
 
 public class GetCubeVisitor implements Visitor{
     private double cube;
+    private int id;
+
+    public GetCubeVisitor(int id) {
+        this.id = id;
+        this.cube = 0;
+    }
 
     public double getCube(){
         return cube;
@@ -13,16 +19,29 @@ public class GetCubeVisitor implements Visitor{
 
     @Override
     public void visitBuilding(Building building) {
-        cube = 0;
+        boolean isSearchedBuilding = false;
+        if (building.getId() == id) {
+            isSearchedBuilding = true;
+        }
+        for ( Level level : building.getLevels()){
+            visitLevel(level, isSearchedBuilding);
+        }
     }
 
     @Override
     public void visitLevel(Level level, boolean isSearchedLevel) {
-        cube = 0;
+        if (level.getId() == id) {
+            isSearchedLevel = true;
+        }
+        for ( Room room : level.getRooms()){
+            visitRoom(room, isSearchedLevel);
+        }
     }
 
     @Override
     public void visitRoom(Room room, boolean isSearchedRoom) {
-        cube = 0;
+        if(room.getId() == id || isSearchedRoom){
+            cube += room.getCube();
+        }
     }
 }

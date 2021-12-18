@@ -8,14 +8,25 @@ public class BuildingData {
     public static Building get(){
         Room kitchen = new Room(0,"Kitchen");
         kitchen.setArea(10);
+        kitchen.setCube(25);
+
         Room bedroom1 = new Room(1,"Bedroom");
         bedroom1.setArea(14);
+        bedroom1.setCube(32);
+
         Room bathroom1 = new Room(2,"Bathroom");
         bathroom1.setArea(7);
+        bathroom1.setCube(16);
+
         Room bedroom2 = new Room(3,"Bedroom");
         bedroom2.setArea(17);
+        bedroom2.setCube(36);
+
         Room bathroom2 = new Room(4,"Bathroom");
         bathroom2.setArea(4);
+        bathroom2.setCube(8);
+
+
 
         Level level1 = new Level(10, "Floor 1");
         level1.addRoom(kitchen);
@@ -25,8 +36,6 @@ public class BuildingData {
         Level level2 = new Level(11, "Floor 2");
         level2.addRoom(bedroom2);
         level2.addRoom(bathroom2);
-
-
 
 
 

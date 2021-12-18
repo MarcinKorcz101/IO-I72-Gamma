@@ -6,22 +6,42 @@ import pl.put.poznan.building.info.logic.composit.Room;
 
 public class GetLightVisitor implements Visitor{
     private double light;
+    private int id;
+
+    public GetLightVisitor(int id) {
+        this.id = id;
+        this.light = 0;
+    }
 
     public double getLight(){
         return light;
     }
     @Override
     public void visitBuilding(Building building) {
-        light = 0;
+        boolean isSearchedBuilding = false;
+        if (building.getId() == id) {
+            isSearchedBuilding = true;
+        }
+        for ( Level level : building.getLevels()){
+            visitLevel(level, isSearchedBuilding);
+        }
     }
 
     @Override
     public void visitLevel(Level level, boolean isSearchedLevel) {
-        light = 0;
+        if (level.getId() == id) {
+            isSearchedLevel = true;
+        }
+        for ( Room room : level.getRooms()){
+            visitRoom(room, isSearchedLevel);
+        }
     }
 
     @Override
     public void visitRoom(Room room, boolean isSearchedRoom) {
-        light = 0;
+        if(room.getId() == id || isSearchedRoom){
+            if(room.getArea() != 0 )
+            light += room.getLight()/room.getArea();
+        }
     }
 }

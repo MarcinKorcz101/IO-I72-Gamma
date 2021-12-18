@@ -8,6 +8,7 @@ import pl.put.poznan.building.info.logic.composit.Building;
 import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.visitor.GetAreaVisitor;
 import pl.put.poznan.building.info.logic.visitor.GetCubeVisitor;
+import pl.put.poznan.building.info.logic.visitor.GetLightVisitor;
 import pl.put.poznan.building.info.service.BuildingService;
 
 import java.util.List;
@@ -60,7 +61,9 @@ public class BuildingInfoController {
     @GetMapping("/light/{id}")
     public String getLight(@PathVariable int id) {
         logger.debug("Getting light of location " + id);
-        return "Light ";
+        GetLightVisitor getLightVisitor = new GetLightVisitor(id);
+        service.getBuilding().accept(getLightVisitor);
+        return "Light " + getLightVisitor.getLight();
     }
 
 

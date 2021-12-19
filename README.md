@@ -1,4 +1,6 @@
 # IO-I72-Gamma
+---
+![example workflow](https://github.com/MarcinKorcz101/IO-I72-Gamma/actions/workflows/maven.yml/badge.svg)
 
 ---
 # Building Info

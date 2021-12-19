@@ -23,3 +23,8 @@ Product Backlog oraz Sprint Backlog:
 ---
 # Diagram UML
 ![Diagram UML](Diagram_UML/diagramUMLversion1Fixed.png)
+
+---
+# Dokumentacja
+
+https://marcinkorcz101.github.io/IO-I72-Gamma/index.html

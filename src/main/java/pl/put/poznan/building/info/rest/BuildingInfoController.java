@@ -29,6 +29,12 @@ public class BuildingInfoController {
         logger.debug("Create data");
     }
 
+    @PostMapping("/load")
+    public void loadBuilding(@RequestBody Building building){
+        logger.debug("Loading new building info");
+        service.setBuilding(building);
+        logger.debug("Saving data");
+    }
 
     @GetMapping("/")
     public Building getBuildingName() {

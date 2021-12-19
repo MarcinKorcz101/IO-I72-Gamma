@@ -41,7 +41,7 @@ jobs:
     - name: Deploy javadoc on branch
       uses: JamesIves/github-pages-deploy-action@4.1.7
       with: 
-        branch: javadoc
+        branch: gh-pages
         folder: javadoc
   
     

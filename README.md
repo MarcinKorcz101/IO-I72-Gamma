@@ -22,4 +22,4 @@ Product Backlog oraz Sprint Backlog:
 
 --
 # Diagram UML
-![Diagram UML](Diagram_UML/diagramUML.png)
+![Diagram UML](Diagram_UML/diagramUMLversion1.png)

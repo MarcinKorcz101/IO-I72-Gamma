@@ -20,6 +20,6 @@ Struktura danych
 Product Backlog oraz Sprint Backlog:
 <a href="https://docs.google.com/spreadsheets/d/1ySsXC-K4nm57-Rw9HnSQgmPofAk3d2ofKPhk7Z_1uO4/edit?usp=sharing" target="_blank">BuildingInfo</a>
 
---
+---
 # Diagram UML
 ![Diagram UML](Diagram_UML/diagramUMLversion1Fixed.png)

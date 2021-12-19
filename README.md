@@ -19,6 +19,9 @@ Struktura danych
 
 Product Backlog oraz Sprint Backlog:
 <a href="https://docs.google.com/spreadsheets/d/1ySsXC-K4nm57-Rw9HnSQgmPofAk3d2ofKPhk7Z_1uO4/edit?usp=sharing" target="_blank">BuildingInfo</a>
+<br>
+Środowisko do zarządzania projektem:
+<a href="https://trello.com/b/WKJo2ypG/building-info" target="_blank">Trello</a>
 
 ---
 # Diagram UML

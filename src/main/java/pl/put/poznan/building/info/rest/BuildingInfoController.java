@@ -14,7 +14,10 @@ import pl.put.poznan.building.info.service.BuildingService;
 import java.util.List;
 import java.util.Optional;
 
-
+/**
+ *
+ * BuildingController is class which enables to create REST communications.
+ */
 @RestController
 public class BuildingInfoController {
 

@@ -4,6 +4,7 @@ import pl.put.poznan.building.info.logic.composit.Building;
 import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
+
 public class GetLightVisitor implements Visitor{
     private double light;
     private int id;

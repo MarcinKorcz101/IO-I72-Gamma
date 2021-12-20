@@ -1,4 +1,6 @@
 # IO-I72-Gamma
+---
+![example workflow](https://github.com/MarcinKorcz101/IO-I72-Gamma/actions/workflows/maven.yml/badge.svg)
 
 ---
 # Building Info
@@ -19,7 +21,15 @@ Struktura danych
 
 Product Backlog oraz Sprint Backlog:
 <a href="https://docs.google.com/spreadsheets/d/1ySsXC-K4nm57-Rw9HnSQgmPofAk3d2ofKPhk7Z_1uO4/edit?usp=sharing" target="_blank">BuildingInfo</a>
+<br>
+Środowisko do zarządzania projektem:
+<a href="https://trello.com/b/WKJo2ypG/building-info" target="_blank">Trello</a>
 
---
+---
 # Diagram UML
 ![Diagram UML](Diagram_UML/diagramUMLversion1Fixed.png)
+
+---
+# Dokumentacja
+
+https://marcinkorcz101.github.io/IO-I72-Gamma/index.html

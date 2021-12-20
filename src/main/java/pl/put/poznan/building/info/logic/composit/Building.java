@@ -7,13 +7,21 @@ import pl.put.poznan.building.info.logic.visitor.Visitor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A Building class to represent building,
+ * inherits from the Location class,
+ * consists of levels
+ */
 public class Building extends Location {
+    /**
+     *  A list of levels of type Level
+     */
     private List<Level> levels;
 
     /**
-     * The Building constructor
-     * @param id the Integer value of building's id
-     * @param name the String to be set as building's name
+     * The Building class constructor
+     * @param id the Integer value of location's id
+     * @param name the String to be set as location's name
      */
     public Building(Integer id, String name) {
         super(id, name);
@@ -22,7 +30,7 @@ public class Building extends Location {
 
     /**
      *
-     * @return a list of levels in building
+     * @return a list of levels in a building
      */
     public List<Level> getLevels() {
         return levels;
@@ -45,8 +53,8 @@ public class Building extends Location {
     }
 
     /**
-     *
-     * @param visitor
+     * Concrete method that enables Visitor to use this class methods
+     * @param visitor a visitor
      */
     @Override
     public void accept(Visitor visitor) {

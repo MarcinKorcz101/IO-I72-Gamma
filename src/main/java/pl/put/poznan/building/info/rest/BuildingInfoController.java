@@ -16,7 +16,7 @@ import java.util.Optional;
 
 /**
  *
- * BuildingController is class which enables to create REST communications.
+ * BuildingInfoController is class which enables to create REST communications.
  */
 @RestController
 public class BuildingInfoController {

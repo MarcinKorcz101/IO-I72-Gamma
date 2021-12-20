@@ -24,7 +24,7 @@ public abstract class Location {
 
     /**
      *
-     * @param id location's id to set
+     * @param id A value of location's id to set
      */
     public void setId(Integer id) {
         this.id = id;
@@ -47,8 +47,8 @@ public abstract class Location {
     }
 
     /**
-     * Abstract method
-     * @param visitor
+     * Abstract method to enable Visitor to use class methods
+     * @param visitor - the visitor
      */
     abstract void accept(Visitor visitor);
 }

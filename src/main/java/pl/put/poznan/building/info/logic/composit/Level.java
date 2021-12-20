@@ -5,14 +5,18 @@ import pl.put.poznan.building.info.logic.visitor.Visitor;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * A Level class to represent levels in a building,
+ *  inherits from the Location class,
+ *  consists of rooms of type Room
+ */
 public class Level extends Location {
     private List<Room> rooms;
 
     /**
-     * Level constructor
-     * @param id the Integer value of level's id
-     * @param name the String to be set as level's name
+     * The Level class constructor
+     * @param id the Integer value of location's id
+     * @param name the String to be set as location's name
      */
     public Level(Integer id, String name) {
         super(id, name);
@@ -37,14 +41,14 @@ public class Level extends Location {
 
     /**
      * Method adds a room to the list of rooms
-     * @param room the room to be added
+     * @param room a room to be added
      */
     public void addRoom(Room room){
         rooms.add(room);
     }
 
     /**
-     *
+     * Concrete method that enables Visitor to use this class methods
      * @param visitor
      */
     @Override

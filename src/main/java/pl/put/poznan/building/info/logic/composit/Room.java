@@ -2,7 +2,10 @@ package pl.put.poznan.building.info.logic.composit;
 
 import pl.put.poznan.building.info.logic.composit.Location;
 import pl.put.poznan.building.info.logic.visitor.Visitor;
-
+/**
+ * A Room class to represent rooms in a building on a given level,
+ *  inherits from the Location class
+ */
 public class Room extends Location {
     private double area;
     private double cube;
@@ -82,6 +85,10 @@ public class Room extends Location {
         this.light = light;
     }
 
+    /**
+     *  Concrete method that enables Visitor to use this class methods
+     * @param visitor - the visitor
+     */
     @Override
     public void accept(Visitor visitor) {
         visitor.visitRoom(this, false);

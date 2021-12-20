@@ -4,18 +4,24 @@ import pl.put.poznan.building.info.logic.composit.Building;
 import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 
 public class GetLightVisitor implements Visitor{
-    private double light;
+    private double lightSum;
+    private double areaSum;
     private int id;
 
     public GetLightVisitor(int id) {
         this.id = id;
-        this.light = 0;
+        this.lightSum = 0;
+        this.areaSum = 0;
     }
 
     public double getLight(){
-        return light;
+        BigDecimal bd = new BigDecimal(lightSum/areaSum).setScale(2, RoundingMode.HALF_UP);
+        return bd.doubleValue();
     }
     @Override
     public void visitBuilding(Building building) {
@@ -42,7 +48,8 @@ public class GetLightVisitor implements Visitor{
     public void visitRoom(Room room, boolean isSearchedRoom) {
         if(room.getId() == id || isSearchedRoom){
             if(room.getArea() != 0 )
-            light += room.getLight()/room.getArea();
+            lightSum += room.getLight();
+            areaSum += room.getArea();
         }
     }
 }

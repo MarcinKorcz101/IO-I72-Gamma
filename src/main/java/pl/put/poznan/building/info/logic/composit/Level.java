@@ -29,7 +29,7 @@ public class Level extends Location {
 
     /**
      *
-     * @param rooms to be set
+     * @param a list of rooms to be set
      */
     public void setRooms(List<Room> rooms) {
         this.rooms = rooms;

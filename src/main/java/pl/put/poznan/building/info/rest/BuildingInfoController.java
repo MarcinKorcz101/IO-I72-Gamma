@@ -5,14 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.info.data.BuildingData;
 import pl.put.poznan.building.info.logic.composit.Building;
-import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.visitor.GetAreaVisitor;
 import pl.put.poznan.building.info.logic.visitor.GetCubeVisitor;
 import pl.put.poznan.building.info.logic.visitor.GetLightVisitor;
 import pl.put.poznan.building.info.service.BuildingService;
 
-import java.util.List;
-import java.util.Optional;
+
+
+import java.util.LinkedHashMap;
 
 
 @RestController
@@ -20,13 +20,14 @@ public class BuildingInfoController {
 
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
     private BuildingService service;
+    LinkedHashMap<String, Object> response;
 
     @Autowired
     public BuildingInfoController(BuildingService service) {
         this.service = service;
         Building building = BuildingData.get();
         service.setBuilding(building);
-        logger.debug("Create data");
+        logger.debug("Loading example data");
     }
 
     @PostMapping("/load")
@@ -43,33 +44,55 @@ public class BuildingInfoController {
     }
 
     @GetMapping("/area/{id}")
-    public String getArea(@PathVariable int id) {
+    public LinkedHashMap<String, Object> getArea(@PathVariable int id) {
         logger.debug("Getting area of location " + id);
         GetAreaVisitor getAreaVisitor = new GetAreaVisitor(id);
         service.getBuilding().accept(getAreaVisitor);
-        return "Area " + getAreaVisitor.getArea();
+
+        response = new LinkedHashMap<String, Object>();
+        response.put("id", id);
+        response.put("area", getAreaVisitor.getArea());
+        return response;
     }
 
     @GetMapping("/cube/{id}")
-    public String getCube(@PathVariable int id) {
+    public LinkedHashMap<String, Object> getCube(@PathVariable int id) {
         logger.debug("Getting cube of location " + id);
         GetCubeVisitor getCubeVisitor = new GetCubeVisitor(id);
         service.getBuilding().accept(getCubeVisitor);
-        return "Cube " + getCubeVisitor.getCube();
+
+        response = new LinkedHashMap<String, Object>();
+        response.put("id", id);
+        response.put("cube", getCubeVisitor.getCube());
+
+        return response;
+
     }
 
     @GetMapping("/heating/{id}")
-    public String getHeating(@PathVariable int id) {
+    public LinkedHashMap<String, Object> getHeating(@PathVariable int id) {
         logger.debug("Getting heating of location " + id);
-        return "Heating ";
+
+        response = new LinkedHashMap<String, Object>();
+        response.put("id", id);
+        response.put("heating", 0);
+
+        return response;
+
     }
 
     @GetMapping("/light/{id}")
-    public String getLight(@PathVariable int id) {
+    public LinkedHashMap<String, Object> getLight(@PathVariable int id) {
         logger.debug("Getting light of location " + id);
         GetLightVisitor getLightVisitor = new GetLightVisitor(id);
         service.getBuilding().accept(getLightVisitor);
-        return "Light " + getLightVisitor.getLight();
+
+        response = new LinkedHashMap<String, Object>();
+        response.put("id", id);
+        response.put("light", getLightVisitor.getLight());
+
+        return response;
+
     }
 
 

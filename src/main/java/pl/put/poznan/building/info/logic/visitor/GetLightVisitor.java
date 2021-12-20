@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
+/**
+ * Class for lighting calculations
+ */
 public class GetLightVisitor implements Visitor{
     private double lightSum;
     private double areaSum;

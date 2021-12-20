@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * A Building class to represent building,
  * inherits from the Location class,
- * consists of levels
+ * consists of levels of type Level
  */
 public class Building extends Location {
     /**

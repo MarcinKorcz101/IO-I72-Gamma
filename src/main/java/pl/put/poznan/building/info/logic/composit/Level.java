@@ -11,6 +11,9 @@ import java.util.List;
  *  consists of rooms of type Room
  */
 public class Level extends Location {
+    /**
+     *  A list of rooms of type Room
+     */
     private List<Room> rooms;
 
     /**
@@ -24,7 +27,6 @@ public class Level extends Location {
     }
 
     /**
-     *
      * @return the list of rooms
      */
     public List<Room> getRooms() {

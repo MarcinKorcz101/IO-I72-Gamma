@@ -9,6 +9,11 @@ public abstract class Location {
     private Integer id;
     private String name;
 
+    /**
+     *
+     * @param id
+     * @param name
+     */
     public Location(Integer id, String name) {
         this.id = id;
         this.name = name;

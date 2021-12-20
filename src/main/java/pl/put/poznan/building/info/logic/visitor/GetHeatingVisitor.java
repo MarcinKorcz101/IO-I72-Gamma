@@ -4,6 +4,9 @@ import pl.put.poznan.building.info.logic.composit.Building;
 import pl.put.poznan.building.info.logic.composit.Level;
 import pl.put.poznan.building.info.logic.composit.Room;
 
+/**
+ * Class for heating calculations
+ */
 public class GetHeatingVisitor implements Visitor {
     private double heating;
 

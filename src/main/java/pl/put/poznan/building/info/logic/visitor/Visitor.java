@@ -10,9 +10,21 @@ import pl.put.poznan.building.info.logic.composit.Room;
 public interface Visitor {
     /**
      *
-     * @param building
+     * @param building a building of type Building
      */
     void visitBuilding(Building building);
+
+    /**
+     *
+     * @param level a level of type Level
+     * @param isSearchedLevel a boolean if the level is searched
+     */
     void visitLevel(Level level, boolean isSearchedLevel);
+
+    /**
+     *
+     * @param room a room of type Room
+     * @param isSearchedRoom a boolean if the room is searched
+     */
     void visitRoom(Room room, boolean isSearchedRoom);
 }

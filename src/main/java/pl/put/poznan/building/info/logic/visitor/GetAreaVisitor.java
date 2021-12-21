@@ -8,6 +8,11 @@ import pl.put.poznan.building.info.logic.composit.Room;
  * Class for calculations of area
  */
 public class GetAreaVisitor implements Visitor{
+    /**
+     * Attributes:
+     * area of type double for storing visited rooms area in m^2
+     * id - unique id of type id
+     */
     private double area;
     private int id;
 

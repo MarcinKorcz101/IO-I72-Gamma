@@ -7,6 +7,13 @@ import pl.put.poznan.building.info.logic.visitor.Visitor;
  *  inherits from the Location class
  */
 public class Room extends Location {
+    /**
+     * Attributes:
+     * area of type double for storing room's area in m^2
+     * cube of type double for storing room's volume in m^3
+     * heating of type double for storing room's energy usage for heating
+     * light of type double for storing room's total light power
+     */
     private double area;
     private double cube;
     private double heating;
@@ -14,7 +21,7 @@ public class Room extends Location {
 
     /**
      * class Room constructor
-     * @param id the room's id
+     * @param id the room's unique id
      * @param name the room's name
      */
     public Room(Integer id, String name) {

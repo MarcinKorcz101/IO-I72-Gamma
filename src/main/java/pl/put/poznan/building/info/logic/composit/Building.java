@@ -13,8 +13,8 @@ import java.util.List;
  * consists of levels of type Level
  */
 public class Building extends Location {
-    /**
-     *  A list of levels of type Level
+    /** Attribute:
+     *  A list of levels of type Level for storing levels in a building
      */
     private List<Level> levels;
 
@@ -45,7 +45,7 @@ public class Building extends Location {
     }
 
     /**
-     *
+     * Adds a level given as a parameter to the building's list of levels
      * @param level a level to be added to list of levels
      */
     public void addLevel(Level level){

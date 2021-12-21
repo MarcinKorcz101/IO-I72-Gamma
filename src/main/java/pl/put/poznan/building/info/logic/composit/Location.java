@@ -6,13 +6,16 @@ import pl.put.poznan.building.info.logic.visitor.Visitor;
  * Abstract class for representing objects such as: Level, Room, Building
  */
 public abstract class Location {
+    /**
+     *
+     */
     private Integer id;
     private String name;
 
     /**
      *
-     * @param id
-     * @param name
+     * @param id Location's id of type Integer
+     * @param name Location's name of type String
      */
     public Location(Integer id, String name) {
         this.id = id;
@@ -53,7 +56,7 @@ public abstract class Location {
 
     /**
      * Abstract method to enable Visitor to use class methods
-     * @param visitor - the visitor
+     * @param visitor  the visitor
      */
     abstract void accept(Visitor visitor);
 }

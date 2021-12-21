@@ -8,15 +8,20 @@ import pl.put.poznan.building.info.logic.visitor.Visitor;
  */
 public class Room extends Location {
     /**
-     * Attributes:
      * area of type double for storing room's area in m^2
-     * cube of type double for storing room's volume in m^3
-     * heating of type double for storing room's energy usage for heating
-     * light of type double for storing room's total light power
      */
     private double area;
+    /**
+     * cube of type double for storing room's volume in m^3
+     */
     private double cube;
+    /**
+     * heating of type double for storing room's energy usage for heating
+     */
     private double heating;
+    /**
+     * light of type double for storing room's total light power
+     */
     private double light;
 
     /**

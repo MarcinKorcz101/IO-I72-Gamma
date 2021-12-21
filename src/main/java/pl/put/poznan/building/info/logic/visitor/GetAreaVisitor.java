@@ -9,11 +9,12 @@ import pl.put.poznan.building.info.logic.composit.Room;
  */
 public class GetAreaVisitor implements Visitor{
     /**
-     * Attributes:
      * area of type double for storing visited rooms area in m^2
-     * id - unique id of type id
      */
     private double area;
+    /**
+     * id of type int for storing location's id to visit
+     */
     private int id;
 
     /**

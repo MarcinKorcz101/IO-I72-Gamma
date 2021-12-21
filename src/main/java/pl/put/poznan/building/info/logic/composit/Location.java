@@ -7,9 +7,12 @@ import pl.put.poznan.building.info.logic.visitor.Visitor;
  */
 public abstract class Location {
     /**
-     *
+     * id of type Integer for storing Location's unique id
      */
     private Integer id;
+    /**
+     * name of type String for storing Location's name
+     */
     private String name;
 
     /**

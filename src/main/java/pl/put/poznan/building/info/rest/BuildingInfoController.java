@@ -17,7 +17,7 @@ import java.util.LinkedHashMap;
 /**
  *
  * BuildingInfoController is class which enables to create REST communications.
- * @inheritDoc
+ *
  */
 @RestController
 public class BuildingInfoController {
@@ -25,10 +25,7 @@ public class BuildingInfoController {
     private static final Logger logger = LoggerFactory.getLogger(BuildingInfoController.class);
     private BuildingService service;
     LinkedHashMap<String, Object> response;
-
-    /**
-     * @inheritDoc
-     */
+    
     @Autowired
     public BuildingInfoController(BuildingService service) {
         this.service = service;

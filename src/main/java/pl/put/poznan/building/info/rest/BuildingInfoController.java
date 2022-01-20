@@ -99,7 +99,7 @@ public class BuildingInfoController {
 
     @GetMapping("/ExceededHeating/{buildingId}/{threshold}")
     public LinkedHashMap<String, Object> getExceedingHeating(@PathVariable int buildingId, @PathVariable double threshold) {
-        logger.debug("Getting locations where heating is exceeds: " + threshold);
+        logger.debug("Getting locations where heating exceeds: " + threshold);
         GetExceededHeatingVisitor getEHeatingVisitor = new GetExceededHeatingVisitor(buildingId, threshold);
         service.getBuilding().accept(getEHeatingVisitor);
 

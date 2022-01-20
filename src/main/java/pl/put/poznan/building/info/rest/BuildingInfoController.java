@@ -8,6 +8,7 @@ import pl.put.poznan.building.info.logic.composit.Building;
 import pl.put.poznan.building.info.logic.visitor.GetAreaVisitor;
 import pl.put.poznan.building.info.logic.visitor.GetCubeVisitor;
 import pl.put.poznan.building.info.logic.visitor.GetLightVisitor;
+import pl.put.poznan.building.info.logic.visitor.GetHeatingVisitor;
 import pl.put.poznan.building.info.service.BuildingService;
 
 
@@ -75,14 +76,15 @@ public class BuildingInfoController {
 
     @GetMapping("/heating/{id}")
     public LinkedHashMap<String, Object> getHeating(@PathVariable int id) {
-        logger.debug("Getting heating of location " + id);
+        logger.debug("Getting heating usage of location " + id);
+        GetHeatingVisitor getHeatingVisitor = new GetHeatingVisitor(id);
+        service.getBuilding().accept(getHeatingVisitor);
 
         response = new LinkedHashMap<String, Object>();
         response.put("id", id);
-        response.put("heating", 0);
+        response.put("heating", getHeatingVisitor.getHeating());
 
         return response;
-
     }
 
     @GetMapping("/light/{id}")
@@ -96,9 +98,7 @@ public class BuildingInfoController {
         response.put("light", getLightVisitor.getLight());
 
         return response;
-
     }
-
 
 }
 

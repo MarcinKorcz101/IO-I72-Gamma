@@ -33,7 +33,7 @@ public class BuildingInfoController {
         service.setBuilding(building);
         logger.debug("Loading example data");
     }
-
+    @CrossOrigin()
     @PostMapping("/load")
     public void loadBuilding(@RequestBody Building building){
         logger.debug("Loading new building info");
@@ -41,12 +41,14 @@ public class BuildingInfoController {
         logger.debug("Saving data");
     }
 
+    @CrossOrigin()
     @GetMapping("/")
     public Building getBuildingName() {
         logger.debug("Getting building name");
         return service.getBuilding();
     }
 
+    @CrossOrigin()
     @GetMapping("/area/{id}")
     public LinkedHashMap<String, Object> getArea(@PathVariable int id) {
         logger.debug("Getting area of location " + id);
@@ -59,6 +61,8 @@ public class BuildingInfoController {
         return response;
     }
 
+
+    @CrossOrigin()
     @GetMapping("/cube/{id}")
     public LinkedHashMap<String, Object> getCube(@PathVariable int id) {
         logger.debug("Getting cube of location " + id);
@@ -73,6 +77,7 @@ public class BuildingInfoController {
 
     }
 
+    @CrossOrigin()
     @GetMapping("/heating/{id}")
     public LinkedHashMap<String, Object> getHeating(@PathVariable int id) {
         logger.debug("Getting heating of location " + id);
@@ -85,6 +90,7 @@ public class BuildingInfoController {
 
     }
 
+    @CrossOrigin()
     @GetMapping("/light/{id}")
     public LinkedHashMap<String, Object> getLight(@PathVariable int id) {
         logger.debug("Getting light of location " + id);

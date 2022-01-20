@@ -1,0 +1,174 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a::after{
+    color: white;
+    text-decoration: none;
+}
+
+.building-container{
+    margin-top: 50px;
+}
+
+.building-name{
+    background-color: #eeeee4;
+    padding: 10px;
+}
+
+
+.level-name{
+    background-color: #e4eeee;
+    padding: 7px;
+    margin-bottom: 5px ;
+}
+
+.room-container{
+    background-color: #eee4ee;
+    padding: 10px;
+    margin: 5px;
+}
+
+.room-name{
+    padding: 20px;
+}
+
+
+
+.input-id{
+    width: 80px;
+}
+
+.input-name{
+    width: 140px;
+}
+
+
+
+.delete-button{
+    background: #d03336;
+    border: #AA1E22 solid 2px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.add-button{
+    background: #b4d033;
+    border: #7d9709 solid 2px;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+
+
+.section-hr{
+    width: 30%;
+}
+
+.room-delete{
+    width: 30px;
+}
+
+
+.input-submit{
+    background-color: #343A44;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    border: #343A44 2px solid;
+    border-radius: 5px;
+}
+
+.bold-span{
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+
+.functions-container{
+    background-color: #949494;
+    width: 400px;
+    height:130px;
+    position: fixed;
+    z-index: 999999;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px;
+    border: #3a3a3a 2px solid;
+    color: black;
+
+}
+
+.select-function{
+    padding: 2px;
+}
+
+.button-func{
+    background-color: #343A44;
+    color: white;
+    padding: 2px 5px;
+    border: #343A44 2px solid;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 50px;
+}
+
+
+
+
+.response-div{
+    display: inline;
+    margin: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+
+.room-set-row{
+    padding-bottom: 5px;
+}
+
+
+.marked{
+    border: #AA1E22 3px solid;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+

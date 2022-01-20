@@ -1,0 +1,11 @@
+.navbar{
+    background-color: #222222;
+    height: 45px;
+    z-index: 9999;
+}
+
+.navbar .brand{
+    font-size: 20px;
+    margin-left: 60px;
+}
+

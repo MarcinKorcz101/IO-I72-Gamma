@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.building.info.data.BuildingData;
 import pl.put.poznan.building.info.logic.composit.Building;
-import pl.put.poznan.building.info.logic.visitor.GetAreaVisitor;
-import pl.put.poznan.building.info.logic.visitor.GetCubeVisitor;
-import pl.put.poznan.building.info.logic.visitor.GetLightVisitor;
-import pl.put.poznan.building.info.logic.visitor.GetHeatingVisitor;
+import pl.put.poznan.building.info.logic.visitor.*;
 import pl.put.poznan.building.info.service.BuildingService;
 
 
@@ -100,6 +97,17 @@ public class BuildingInfoController {
         return response;
     }
 
+    @GetMapping("/ExceededHeating/{buildingId}/{threshold}")
+    public LinkedHashMap<String, Object> getExceedingHeating(@PathVariable int buildingId, @PathVariable double threshold) {
+        logger.debug("Getting locations where heating is exceeds: " + threshold);
+        GetExceededHeatingVisitor getEHeatingVisitor = new GetExceededHeatingVisitor(buildingId, threshold);
+        service.getBuilding().accept(getEHeatingVisitor);
+
+        response = new LinkedHashMap<String, Object>();
+        response.put("ids", getEHeatingVisitor.getExceededHeating());
+
+        return response;
+    }
 }
 
 

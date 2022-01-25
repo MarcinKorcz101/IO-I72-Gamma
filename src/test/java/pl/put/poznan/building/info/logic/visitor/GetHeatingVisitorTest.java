@@ -32,23 +32,25 @@ class GetHeatingVisitorTest{
     void visitBuildingTest() {
         Level level1 = new Level(111, "level1");
         Room room1 = new Room(1,"room1");
-        room1.setCube(20);
-        room1.setHeating(200);
+        room1.setCube(40);
+        room1.setHeating(400);
+
 
         Room room2 = new Room(2,"room2");
-        room2.setCube(30);
-        room2.setHeating(300);
+        room2.setCube(60);
+        room2.setHeating(600);
+
 
         level1.addRoom(room1);
         level1.addRoom(room2);
 
         Level level2 = new Level(211, "level2");
         Room room3 = new Room(3,"room3");
-        room3.setCube(40);
-        room3.setHeating(400);
+        room3.setCube(80);
+        room3.setHeating(800);
         Room room4 = new Room(4,"room4");
-        room4.setCube(500);
-        room4.setHeating(500);
+        room4.setCube(100);
+        room4.setHeating(1000);
         level2.addRoom(room3);
         level2.addRoom(room4);
 

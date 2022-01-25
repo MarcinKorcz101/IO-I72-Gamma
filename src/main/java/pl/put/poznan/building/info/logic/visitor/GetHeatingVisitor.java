@@ -73,7 +73,7 @@ public class GetHeatingVisitor implements Visitor {
     @Override
     public void visitRoom(Room room, boolean isSearchedRoom) {
         if(room.getId() == id || isSearchedRoom){
-            if(room.getArea() != 0 )
+            if(room.getCube() != 0 )
                 heatingSum += room.getHeating();
             cubeSum += room.getCube();
         }

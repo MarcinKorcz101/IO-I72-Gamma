@@ -13,8 +13,17 @@ import java.util.ArrayList;
  * Class for exceeded heating calculations
  */
 public class GetExceededHeatingVisitor implements Visitor{
+    /**
+     * id of type int for storing location's id to visit
+     */
     private final int id;
+    /**
+     * threshold of type double for exceeded heating calculations
+     */
     private final double threshold;
+    /**
+     * list of type int for storing ids for loactions that exceeded heating
+     */
     private ArrayList<Integer> ExceededIds;
 
     /**

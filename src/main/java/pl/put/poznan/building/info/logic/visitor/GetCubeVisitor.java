@@ -6,9 +6,16 @@ import pl.put.poznan.building.info.logic.composit.Room;
 
 /**
  *  Class for calculations of volume
+ *
  */
 public class GetCubeVisitor implements Visitor{
+    /**
+     * cube of type double for storing visited rooms cube in m^3
+     */
     private double cube;
+    /**
+     * id of type int for storing location's id to visit
+     */
     private int id;
 
     public GetCubeVisitor(int id) {

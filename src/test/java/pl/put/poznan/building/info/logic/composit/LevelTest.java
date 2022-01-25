@@ -1,5 +1,6 @@
 package pl.put.poznan.building.info.logic.composit;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,7 @@ class LevelTest {
     private static Room room2;
 
     @BeforeEach
-    public static void setUp(){
+    public void setUp(){
         testedLevel = new Level(1234, "testedLevel");
         room1 = new Room(11, "room1");
         room1.setArea(100);
@@ -25,6 +26,9 @@ class LevelTest {
         room2.setCube(2000);
         room2.setHeating(5000);
         room2.setLight(40000);
+
+        testedLevel.addRoom(room1);
+        testedLevel.addRoom(room2);
     }
 
 
